@@ -3,6 +3,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
+const baseUrl = import.meta.env.RENDER_URL
 
 const Signup = () => {
   const navigate = useNavigate();
@@ -26,7 +27,7 @@ const Signup = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post('http://localhost:4000/api/educase/signup', {
+      const response = await axios.post(`${baseUrl}/api/educase/signup`, {
         ...formData,
         agency: formData.agency === 'yes' ? true : false,
       });

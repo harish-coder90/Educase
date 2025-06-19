@@ -2,6 +2,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
+const baseUrl = import.meta.env.RENDER_URL
 
 const Login = () => {
   const navigate = useNavigate();
@@ -21,7 +22,7 @@ const Login = () => {
 
   const handleLogin = async () => {
     try {
-      const response = await axios.post('http://localhost:4000/api/educase/login', formData);
+      const response = await axios.post(`${baseUrl}/api/educase/login`, formData);
       console.log('Login successful:', response.data);
       navigate('/settings');
     } catch (error) {
