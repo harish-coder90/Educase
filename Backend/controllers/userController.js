@@ -7,7 +7,7 @@ import user from '../models/userModel.js'
     try {
         
         const {fullname, phone, email,password, company,agency} = req.body
-        if(!fullname || !phone || !email || !password || !company || !agency){
+        if(!fullname || !phone || !email || !password || !company || agency===undefined){
             return  res.status(400).send('All fields mandatory')
         }
 
