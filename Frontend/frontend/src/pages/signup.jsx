@@ -3,7 +3,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
-const baseUrl = import.meta.env.RENDER_URL
+const baseUrl = import.meta.env.VITE_API_BASE_URL;
 
 const Signup = () => {
   const navigate = useNavigate();
