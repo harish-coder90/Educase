@@ -10,6 +10,17 @@ import { fileURLToPath } from "url";
 dotenv.config()
 
 const app = express()
+const allowedOrigins = [
+  'http://localhost:5173',
+  'https://project909.netlify.app'
+];
+
+app.use(cors({
+  origin: allowedOrigins,
+  credentials: true
+}));
+
+
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
