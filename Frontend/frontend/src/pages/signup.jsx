@@ -12,14 +12,14 @@ const Signup = () => {
     email: '',
     password: '',
     company: '',
-    agency: false,
+    agency: 'no',
   });
 
   const handleChange = (e) => {
     const { name, value, type } = e.target;
     setFormData((prev) => ({
       ...prev,
-      [name]: type === 'radio' ? value === 'yes' : value,
+      [name]: value,
     }));
   };
 
@@ -30,7 +30,7 @@ const Signup = () => {
         ...formData,
         agency: formData.agency === 'yes',
       });
-      console.log('Signup successful:', response.data);
+      alert('Signup successful');
       navigate('/settings');
     } catch (error) {
       console.error('Signup error:', error.response?.data || error.message);
