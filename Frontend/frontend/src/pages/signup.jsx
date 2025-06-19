@@ -28,7 +28,7 @@ const Signup = () => {
     try {
       const response = await axios.post('http://localhost:4000/api/educase/signup', {
         ...formData,
-        agency: formData.agency === 'yes',
+        agency: formData.agency === 'yes' ? true : false,
       });
       alert('Signup successful');
       navigate('/settings');
